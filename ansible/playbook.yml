@@ -1,0 +1,74 @@
+---
+- hosts: "webservers"
+  become: true
+  vars_files:
+    - vars.yml
+
+  tasks:
+    - name: Clone a github repository
+      git:
+        repo: "{{ git_repo }}"
+        dest: "{{ deploy_directory }}"
+        clone: yes
+        update: yes
+
+    - name: Update nodejs package
+
+      shell: curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+
+    - name: Install nodejs
+      apt:
+        name: nodejs
+        state: present
+
+    - name: Npm initialization
+      shell: npm init -y
+      args:
+        chdir: "{{ deploy_directory }}/"
+
+    - name: Install node dependencies
+      shell: npm install
+      args:
+        chdir: "{{ deploy_directory }}/"
+
+    - name: Create environment variables file
+      copy:
+        dest: "{{ deploy_directory }}/.env"
+        content: |
+          # Host configuration
+          PORT=8080
+          HOST=0.0.0.0
+
+          HOST_URL=http://20.5.65.113:8080
+          COOKIE_ENCRYPT_PWD=superAwesomePasswordStringThatIsAtLeast32CharactersLong!
+          NODE_ENV=development
+
+          # Okta configuration
+          OKTA_ORG_URL="*****************"
+          OKTA_CLIENT_ID="*******************"
+          OKTA_CLIENT_SECRET="********************************"
+
+          # Postgres
+          PGHOST={db_host}
+          PGUSERNAME={your_username}
+          PGDATABASE=postgres
+          PGPASSWORD={your_pass}
+          PGPORT=5432
+
+    - name: Database initialization
+      shell: npm run initdb
+      async: 30
+      poll: 0
+      args:
+        chdir: "{{ deploy_directory }}/"
+
+    - name: Install pm2
+      shell: npm install pm2@latest -g
+
+    - name: Run application
+      shell: pm2 start npm -- run dev && pm2 save && pm2 startup
+      args:
+        chdir: "{{ deploy_directory }}/"
+
+    - name: Reboot
+      command: "reboot now"

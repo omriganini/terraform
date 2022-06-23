@@ -1,0 +1,7 @@
+.gitattributes
+
+.terraform.lock.hcl
+
+terraform.tfstate
+
+terraform.tfstate.backup

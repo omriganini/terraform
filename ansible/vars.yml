@@ -1,0 +1,11 @@
+http_port: 8080
+public_ip: 20.5.65.113
+git_repo: https://github.com/omriganini/bootcamp-app.git
+deploy_directory: /home/omriganini/bootcamp-app\n
+pg_host: *******
+pg_username: *****
+pg_database: postgres
+pg_password: *******
+okta_org_url: "************************"
+okta_client_id: "*****************************"
+okta_client_secret: "*************************************"
