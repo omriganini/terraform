@@ -3,4 +3,4 @@ This template will build during this project:
 
 
 In this project I used Terraform for the CI part
-And Ansible for the CD part
+and Ansible for the CD part
