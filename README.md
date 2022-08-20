@@ -14,7 +14,7 @@
 # Azure:
 * Azure is a cloud computing service operated by Microsoft for application management via Microsoft-managed data centers.
 * It provides software as a service (SaaS), platform as a service (PaaS) and infrastructure as a service (IaaS) and supports many different programming languages, tools, and frameworks, including both Microsoft-specific and third-party software and systems.
-* [What is cloud computing](https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-cloud-computing/)
+* [What is cloud computing](https://azure.microsoft.com/en-us/resources/cloud-computing-dictionary/what-is-cloud-computing/).
 * [Cloud service providers](https://www.c-sharpcorner.com/article/top-10-cloud-service-providers/).
 
 # Terraform:
