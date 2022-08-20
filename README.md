@@ -1,4 +1,4 @@
-# This will the final result of our project:
+# This will be the final result of our project:
 ![system_design](https://user-images.githubusercontent.com/105926044/175485830-982d6170-94a7-412f-9071-ec3e89079b00.png)
 
 
