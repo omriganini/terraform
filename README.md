@@ -48,4 +48,4 @@
 ![week6 staging](https://user-images.githubusercontent.com/105926044/178116708-7f5f8aac-a9ce-4523-a06e-2d45f8b34c55.jpg)
 
 
-# Hope this helped you and you learned something new , enjoy from your app :)
+# Hope this helped you and you learned something new , enjoy from your app.
