@@ -36,7 +36,7 @@
 * Change the code for your selections (Names , passwords and etc).
 * Deploy your Infrastructure [how to do that](https://learn.hashicorp.com/tutorials/terraform/azure-build?in=terraform/azure-get-started).
 
-# And That's what you should see:
+# That's what you should see:
 ![azure portal](https://user-images.githubusercontent.com/105926044/178116551-04376192-67ce-4225-8055-df62cf352314.jpg)
 
 
